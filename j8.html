@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Game of Craps</title>
+<script type="text/javascript">
+  var roll1=0;
+  var count=0;
+  var roll2=0;
+  var sumofDice=0;
+
+  var roll1=Math.floor(Math.random()*6+1);
+  var roll2=Math.floor(Math.random()*6+1);
+  sumofDice=roll1+roll2;
+  document.write("<h1>First die is "+roll1+"</h1>");
+  document.write("<h1>Second die is "+roll2+"</h1>");
+  document.write("<h1>Sum of dies is "+sumofDice+"</h1>");
+
+  if(sumofDice==7 || sumofDice==11)
+   document.writeln("<h1>You win!!!</h1>");
+  else if(sumofDice==2 || sumofDice==3 || sumofDice==12)
+   document.writeln("<h1>You lose!!!</h1>");
+  else{
+   var point=sumofDice;
+   for(var i=1;i<=50;i++){
+    var roll1=Math.floor(Math.random()*6+1);
+    var roll2=Math.floor(Math.random()*6+1);
+   document.write("<h1>First die is "+roll1+"</h1>");
+   document.write("<h1>Second die is "+roll2+"</h1>");
+   sumofDice=roll1+roll2;
+
+   if(sumofDice==7 || sumofDice==11){
+    document.writeln("<h1>You lose!!!</h1>");
+    break;
+   }
+  else if(point==sumofDice){
+   document.writeln("<h1>You win!!!</h1>");
+   break;
+  }
+ }
+}
+</script>
+</head>
+<body>
+</body>
+</html>
+    
